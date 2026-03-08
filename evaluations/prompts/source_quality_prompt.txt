@@ -1,0 +1,56 @@
+You are evaluating the quality of a web search result for an evaluation pipeline.
+
+Score this source based on:
+1. Reputability (0-5): How trustworthy and institutionally credible is the source?
+- High: trusted journalism, peer-reviewed journals, government, university, official docs, standards bodies, established encyclopedic references
+- Medium: niche industry publications, company blogs, professionally edited but less authoritative sources
+- Low: user-generated content, personal blogs, social posts, forums, low editorial oversight sites
+
+2. Relevance (0-5): How relevant is this result to the search query?
+
+3. Overall quality (0-5): combine reputability and relevance, approximately:
+overall_quality = {reputability_weight:.2f} * reputability + {relevance_weight:.2f} * relevance
+
+Also classify source_type as one of:
+- official_documentation
+- technical_documentation
+- government
+- academic
+- journal
+- encyclopedia
+- major_news
+- niche_news
+- company_blog
+- company_site
+- blog
+- social_media
+- forum
+- marketplace
+- unknown
+
+Return ONLY valid JSON with this exact schema:
+{{
+"reputability_score": <number 0-5>,
+"relevance_score": <number 0-5>,
+"overall_quality_score": <number 0-5>,
+"source_type": "<one label above>",
+"is_ugc": <true or false>,
+"rationale": "<brief explanation, 1-3 sentences>"
+}}
+
+Search query:
+{query}
+
+Search result:
+- Domain: {domain}
+- URL: {url}
+- Title: {title}
+- Snippet: {snippet}
+- Tavily relevance score: {tavily_score}
+
+Important guidance:
+- Social media, personal blogs, and user-generated content should receive lower reputability.
+- Reputability and relevance are different.
+- If the result looks like a social post, forum post, or community post, mark is_ugc = true.
+- Be conservative; avoid extremely high or low scores unless clearly justified.
+- Scores should be whole numbers, no decimals or fractional values

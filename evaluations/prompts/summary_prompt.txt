@@ -1,0 +1,26 @@
+You are given Tavily search evaluation data for one or more queries in the following Python structure:
+
+Top level: JSON keyed by run or UUID.
+
+For each UUID you may have up to four lists, each with a single dict element:
+-freshness_summary: fields like status, freshness_score, timeframe_days, results_count, dated_results_count, within_window, missing_dates, oldest_date, newest_date, and an optional note.
+-diversity_summary: fields like total_sources, unique_sources, unique_source_pct, diversity_score, most_frequent_source, most_frequent_source_count, and an optional note.
+-quality_summary: fields like results_count, avg_quality_score, avg_reputability_score, avg_relevance_score, high_quality_sources, ugc_sources, highest_quality_source, lowest_quality_source, and an optional note.
+-coverage_summary: fields like results_count, num_facets, breadth_score, top_facet, top_facet_share, and an optional note.
+
+Your task is to produce a concise natural-language summary of the overall search performance across all UUIDs, using the JSON below
+
+{eval_summary}
+
+Instructions:
+- Highlight patterns (e.g., “freshness is strong for recent AI news queries but skipped for queries with missing dates”).
+- Call out strengths (e.g., good diversity, high relevance) and weaknesses (e.g., mediocre reputability, skipped freshness when dates are missing).
+- Suggest 1-3 specific, actionable improvements to Tavily’s search behavior or evaluation configuration (for example, handling missing published_date, encouraging more high-reputability sources, or improving coverage balance across facets).
+
+Important Guidance:
+Be concise: aim for 3-5 sentences for the summary.
+You may mention individual tool calls/UUIDs, but try to address the overall performance
+Do not repeat raw numbers exhaustively; only mention metrics that are important to explain the performance and trade-offs.
+Write in clear, neutral, product-review style language.
+
+Here is the evaluation summary JSON for you to summmarize:
