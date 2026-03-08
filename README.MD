@@ -150,15 +150,6 @@ A breadth score is then computed using:
 
 This provides a simple measure of **how well the search results cover the conceptual space of the query**.
 
-## Outputs
-
-Each evaluation produces:
-
-- **Structured metrics (pandas DataFrames)** for programmatic analysis
-- **Interactive notebook reports** with collapsible sections for easy inspection
-
-This design allows both **automated monitoring pipelines** and **manual exploratory analysis**.
-
 ## Future Extensions
 
 Potential future evaluations include:
