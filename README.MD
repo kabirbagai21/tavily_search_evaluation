@@ -45,7 +45,7 @@ Many queries require up-to-date information (news, technology developments, regu
 1. Extract `published_date` from Tavily search results.
 2. Convert publication timestamps to age relative to the evaluation time.
 3. Compute a freshness score using:
-   - coverage of results within the timeframe
+   - number of results within the timeframe
    - average recency of the results.
 
 If publication dates are partially missing, the score is computed using only dated results while reporting exclusions.
