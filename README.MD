@@ -167,10 +167,6 @@ Potential future evaluations include:
 - ranking quality evaluation
 - duplicate / redundancy detection
 - answerability scoring
-- domain authority weighting
-- temporal intent compliance
-
-These would further strengthen the ability to benchmark and monitor retrieval quality in AI systems.
 
 # Setup
 
