@@ -204,3 +204,5 @@ You may run the cells of the notebook within your IDE or by starting the Jupyter
 ```bash
 jupyter notebook
 ```
+
+Run the cells in the notebook ```agent_eval.ipynb``` to perform the evaluation.
